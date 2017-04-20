@@ -1,0 +1,9 @@
+{
+  "messenger_bot": {
+    "auth": {
+      "accessToken": "accessToken",
+      "verifyToken": "5984",
+      "appSecret": "customers"
+    }
+  }
+}
