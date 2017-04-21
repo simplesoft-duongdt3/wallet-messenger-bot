@@ -1,19 +1,19 @@
 'use strict';
 var config = require('config');
-const config = config.get('messenger_bot.auth');
+const configAuth = config.get('messenger_bot.auth');
 
 const BootBot = require('bootbot');
 
 const bot = new BootBot({
-  accessToken: config.accessToken,
-  verifyToken: config.verifyToken,
-  appSecret: config.appSecret
+    accessToken: configAuth.accessToken,
+    verifyToken: configAuth.verifyToken,
+    appSecret: configAuth.appSecret
 });
 
 bot.on('message', (payload, chat) => {
   const text = payload.message.text;
-  console.log(`The user said: ${text}`);
-  chat.say(`Echo: ${text}`);
+    console.log("The user said: ${text}");
+    chat.say("Echo: ${text}");
 });
 
 bot.hear(['hi', 'hello'], (payload, chat) => {
